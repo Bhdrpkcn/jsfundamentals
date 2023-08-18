@@ -7,11 +7,35 @@ function LogicalOperators() {
     setSelectedButton(buttonKey);
   };
 
-  const logicTypes = () => {
+  const logicTypes1 = () => {
     return (
       <div className="main-content">
-        test array
-        <textarea className="text-area">arrayxxarray</textarea>
+        && And definiton
+        <textarea className="text-area">and</textarea>
+      </div>
+    );
+  };
+  const logicTypes2 = () => {
+    return (
+      <div className="main-content">
+        || Or definiton
+        <textarea className="text-area">or</textarea>
+      </div>
+    );
+  };
+  const logicTypes3 = () => {
+    return (
+      <div className="main-content">
+        ?? Nullish Coalesing definiton
+        <textarea className="text-area">null</textarea>
+      </div>
+    );
+  };
+  const logicTypes4 = () => {
+    return (
+      <div className="main-content">
+        a ? b : c (Ternary Operator) definiton
+        <textarea className="text-area">ternary</textarea>
       </div>
     );
   };
@@ -23,18 +47,36 @@ function LogicalOperators() {
           className="thrd-animated-btn"
           onClick={() => handleButtonClick("logic1")}
         >
-          change logic1
+          && And
         </button>
-        <div>{selectedButton === "logic1" && logicTypes()}</div>
+        <div>{selectedButton === "logic1" && logicTypes1()}</div>
       </div>
       <div className="thrd-btn">
         <button
           className="thrd-animated-btn"
           onClick={() => handleButtonClick("logic2")}
         >
-          change logic 2
+          || Or
         </button>
-        <div>{selectedButton === "logic2" && logicTypes()}</div>
+        <div>{selectedButton === "logic2" && logicTypes2()}</div>
+      </div>
+      <div className="thrd-btn">
+        <button
+          className="thrd-animated-btn"
+          onClick={() => handleButtonClick("logic3")}
+        >
+          ?? Nullish
+        </button>
+        <div>{selectedButton === "logic3" && logicTypes3()}</div>
+      </div>
+      <div className="thrd-btn">
+        <button
+          className="thrd-animated-btn"
+          onClick={() => handleButtonClick("logic4")}
+        >
+          Ternary Operators
+        </button>
+        <div>{selectedButton === "logic4" && logicTypes4()}</div>
       </div>
     </div>
   )

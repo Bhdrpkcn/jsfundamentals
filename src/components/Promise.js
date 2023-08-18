@@ -7,11 +7,27 @@ function Promise() {
     setSelectedButton(buttonKey);
   };
 
-  const promiseTypes = () => {
+  const promiseTypes1 = () => {
     return (
       <div className="main-content">
-        test array
-        <textarea className="text-area">arrayxxarray</textarea>
+        Promise.then() definition
+        <textarea className="text-area">.then()</textarea>
+      </div>
+    );
+  };
+  const promiseTypes2 = () => {
+    return (
+      <div className="main-content">
+        Promise.finally() definition
+        <textarea className="text-area">.finally()</textarea>
+      </div>
+    );
+  };
+  const promiseTypes3 = () => {
+    return (
+      <div className="main-content">
+        async/await Syntax Definition
+        <textarea className="text-area">async/await</textarea>
       </div>
     );
   };
@@ -23,18 +39,27 @@ function Promise() {
           className="thrd-animated-btn"
           onClick={() => handleButtonClick("promise1")}
         >
-          change promise1
+          Promise.Then()
         </button>
-        <div>{selectedButton === "promise1" && promiseTypes()}</div>
+        <div>{selectedButton === "promise1" && promiseTypes1()}</div>
       </div>
       <div className="thrd-btn">
         <button
           className="thrd-animated-btn"
           onClick={() => handleButtonClick("promise2")}
         >
-          change promise 2
+          Promise.finally()
         </button>
-        <div>{selectedButton === "promise2" && promiseTypes()}</div>
+        <div>{selectedButton === "promise2" && promiseTypes2()}</div>
+      </div>
+      <div className="thrd-btn">
+        <button
+          className="thrd-animated-btn"
+          onClick={() => handleButtonClick("promise3")}
+        >
+          async/await syntax
+        </button>
+        <div>{selectedButton === "promise3" && promiseTypes3()}</div>
       </div>
     </div>
   )

@@ -7,7 +7,23 @@ function This() {
     setSelectedButton(buttonKey);
   };
 
-  const thisTypes = () => {
+  const thisTypes1 = () => {
+    return (
+      <div className="main-content">
+        test array
+        <textarea className="text-area">arrayxxarray</textarea>
+      </div>
+    );
+  };
+  const thisTypes2 = () => {
+    return (
+      <div className="main-content">
+        test array
+        <textarea className="text-area">arrayxxarray</textarea>
+      </div>
+    );
+  };
+  const thisTypes3 = () => {
     return (
       <div className="main-content">
         test array
@@ -23,18 +39,27 @@ function This() {
         className="thrd-animated-btn"
         onClick={() => handleButtonClick("this1")}
       >
-        change this 1
+        What is This Keyword
       </button>
-      <div>{selectedButton === "this1" && thisTypes()}</div>
+      <div>{selectedButton === "this1" && thisTypes1()}</div>
     </div>
     <div className="thrd-btn">
       <button
         className="thrd-animated-btn"
         onClick={() => handleButtonClick("this2")}
       >
-        change this 2
+        {} and Context in Js
       </button>
-      <div>{selectedButton === "this2" && thisTypes()}</div>
+      <div>{selectedButton === "this2" && thisTypes2()}</div>
+    </div>
+    <div className="thrd-btn">
+      <button
+        className="thrd-animated-btn"
+        onClick={() => handleButtonClick("this2")}
+      >
+        This Funciton in Normal and Arrow Functions
+      </button>
+      <div>{selectedButton === "this2" && thisTypes3()}</div>
     </div>
   </div>
   )

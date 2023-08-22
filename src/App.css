@@ -1,19 +1,15 @@
 .App {
   display: flex;
   flex-direction: column;
-  background-color: #282c34;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   min-height: 100vh;
   min-width: 90vh;
-}
-
-.Home {
-  color: white;
-  text-align: center;
 }
 
 .main-btn {
   margin: 2rem 2rem 2rem 6rem;
   display: flex;
+  width: 600px;
   background-color: #c2fbd7;
   border-radius: 100px;
   box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
@@ -46,8 +42,10 @@
 .sec-btn {
   justify-content: space-around;
   display: flex;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  padding: 2rem 1rem 2rem 1rem;
+  border: 0.5px solid rgb(165, 107, 101);
+  border-radius: 1rem;
+  margin: 1rem;
 }
 
 .animated-btn {
@@ -91,7 +89,7 @@
 .thrd-animated-btn {
   align-content: flex-start;
   background-color: #c2f1fb;
-  border-radius: 100px;
+  border-radius: 15px;
   color: rgb(0, 109, 128);
   cursor: pointer;
   display: inline-block;
@@ -101,30 +99,62 @@
   text-decoration: none;
   transition: all 750ms;
   border: 0;
-  width: 300px;
+  width: 200px;
+  height: 50px;
   font-size: 14px;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
 .thrd-animated-btn:focus {
-  width: 750px;
+  height: 100px;
+  background-color: #5cd9f5;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  color: rgb(0, 109, 128);
+}
+
+.body {
+  display:flex;
 }
 
 .main-content {
-  padding: 1rem 1rem 1rem 0.5rem;
   display: flex;
+  flex: 1;
+  gap: 1rem;
   flex-direction: column;
-  align-items: flex-start;
-  margin: 0.5rem 1rem 1rem 0.5rem;
-  border: 2px solid black;
+  padding: 1rem 1rem 1rem 0.5rem;
+  margin: 0.5rem 1rem 1rem 1rem;
+  border: 1px solid salmon;
+  border-radius: 1rem;
+  color: wheat;
   font-size: 14px;
+  overflow: auto;
 }
 
-.text-area {
-  background-color: gray;
-  min-width: 500px;
-  border: 0px;
-  font-size: 12px;
-  margin-top: 0.5rem;
+h2 {
+  color: #5cd9f5;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
+}
+
+.sidebar {
+}
+
+pre {
+  font-family: monospace;
+  white-space-collapse: preserve;
+  text-wrap: wrap;
+  margin: 1em 0px;
+}
+
+.code-block {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0rem 1rem 0rem 1rem;
+  width: 95%;
+  border-bottom: 1px solid rgb(191, 233, 237);
 }

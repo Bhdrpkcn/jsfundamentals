@@ -7,62 +7,108 @@ function Promise() {
     setSelectedButton(buttonKey);
   };
 
+  const codeBlock = (content) => {
+    return (
+      <div>
+        <pre className="code-block">
+          <code>{content}</code>
+        </pre>
+      </div>
+    );
+  };
+
   const promiseTypes1 = () => {
     return (
       <div className="main-content">
-        Promise.then() definition
-        <textarea className="text-area">.then()</textarea>
+        <h2>Definition</h2>
+        <p>Here is the text for Promise.Then() definition and usage.</p>
+        {codeBlock(`
+Function example 1
+ 
+        `)}
+
+        <h2>Definition</h2>
+        <p>Here is the text for Promise.Then() definition and usage.</p>
+        {codeBlock(`
+Function example 2
+        `)}
       </div>
     );
   };
+
   const promiseTypes2 = () => {
     return (
       <div className="main-content">
-        Promise.finally() definition
-        <textarea className="text-area">.finally()</textarea>
+        <h2>Definition</h2>
+        <p>Here is the text for Promise.finally() definition and usage.</p>
+        {codeBlock(`
+Function example 1
+ 
+        `)}
+
+        <h2>Definition</h2>
+        <p>Here is the text for Promise.finally() definition and usage.</p>
+        {codeBlock(`
+Function example 2
+        `)}
       </div>
     );
   };
+  
   const promiseTypes3 = () => {
     return (
       <div className="main-content">
-        async/await Syntax Definition
-        <textarea className="text-area">async/await</textarea>
+        <h2>Definition</h2>
+        <p>Here is the text for async/await syntax definition and usage.</p>
+        {codeBlock(`
+Function example 1
+ 
+        `)}
+
+        <h2>Definition</h2>
+        <p>Here is the text for async/await syntax definition and usage.</p>
+        {codeBlock(`
+Function example 2
+        `)}
       </div>
     );
   };
 
   return (
-    <div>
-      <div className="thrd-btn">
-        <button
-          className="thrd-animated-btn"
-          onClick={() => handleButtonClick("promise1")}
-        >
-          Promise.Then()
-        </button>
+    <div className="body">
+      <div className="sidebar">
+        <div className="thrd-btn">
+          <button
+            className="thrd-animated-btn"
+            onClick={() => handleButtonClick("promise1")}
+          >
+            Promise.Then()
+          </button>
+        </div>
+        <div className="thrd-btn">
+          <button
+            className="thrd-animated-btn"
+            onClick={() => handleButtonClick("promise2")}
+          >
+            Promise.finally()
+          </button>
+        </div>
+        <div className="thrd-btn">
+          <button
+            className="thrd-animated-btn"
+            onClick={() => handleButtonClick("promise3")}
+          >
+            async/await syntax
+          </button>
+        </div>
+      </div>
+      <div>
         <div>{selectedButton === "promise1" && promiseTypes1()}</div>
-      </div>
-      <div className="thrd-btn">
-        <button
-          className="thrd-animated-btn"
-          onClick={() => handleButtonClick("promise2")}
-        >
-          Promise.finally()
-        </button>
         <div>{selectedButton === "promise2" && promiseTypes2()}</div>
-      </div>
-      <div className="thrd-btn">
-        <button
-          className="thrd-animated-btn"
-          onClick={() => handleButtonClick("promise3")}
-        >
-          async/await syntax
-        </button>
         <div>{selectedButton === "promise3" && promiseTypes3()}</div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Promise
+export default Promise;

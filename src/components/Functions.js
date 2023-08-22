@@ -7,28 +7,66 @@ function Functions() {
     setSelectedButton(buttonKey);
   };
 
-  const functionTypes1 = () => {
+  const codeBlock = (content) => {
     return (
-      <div className="main-content">
-        Returning a Value Definition
-        <textarea className="text-area">Returning Value</textarea>
-      </div>
-    );
-  };
-  const functionTypes2 = () => {
-    return (
-      <div className="main-content">
-        Parameters definition
-        <textarea className="text-area">Parameters</textarea>
+      <div>
+        <pre className="code-block">
+          <code>{content}</code>
+        </pre>
       </div>
     );
   };
 
+  const functionTypes1 = () => {
+    return (
+      <div className="main-content">
+        <h2>Definition</h2>
+        <p>Here is the text for Returning a Value definition and usage.</p>
+        {codeBlock(`
+Function example 1
+ 
+        `)}
+
+        <h2>Definition</h2>
+        <p>Here is the text for Returning a Value definition and usage.</p>
+        {codeBlock(`
+Function example 2
+        `)}
+      </div>
+    );
+  };
+
+  const functionTypes2 = () => {
+    return (
+      <div className="main-content">
+        <h2>Definition</h2>
+        <p>Here is the text Parameters for definition and usage.</p>
+        {codeBlock(`
+Function example 1 
+        `)}
+
+        <h2>Definition</h2>
+        <p>Here is the text for Parameters definition and usage.</p>
+        {codeBlock(`
+Function example 2
+        `)}
+      </div>
+    );
+  };
   const functionTypes3 = () => {
     return (
       <div className="main-content">
-        Default Parameters Definition
-        <textarea className="text-area">Default Parameters</textarea>
+        <h2>Definition</h2>
+        <p>Here is the text for Default Parameters definition and usage.</p>
+        {codeBlock(`
+Function example 1 
+        `)}
+
+        <h2>Definition</h2>
+        <p>Here is the text for Default Parameters definition and usage.</p>
+        {codeBlock(`
+Function example 2
+        `)}
       </div>
     );
   };
@@ -36,8 +74,17 @@ function Functions() {
   const functionTypes4 = () => {
     return (
       <div className="main-content">
-        Inner-Outer Definition
-        <textarea className="text-area">Inner Outer Variables</textarea>
+        <h2>Definition</h2>
+        <p>Here is the text for definition and usage.</p>
+        {codeBlock(`
+Function example 1 
+        `)}
+
+        <h2>Definition</h2>
+        <p>Here is the text for definition and usage.</p>
+        {codeBlock(`
+Function example 2
+        `)}
       </div>
     );
   };
@@ -45,57 +92,70 @@ function Functions() {
   const functionTypes5 = () => {
     return (
       <div className="main-content">
-        Var Let Const Definiton
-        <textarea className="text-area">Var Let Const</textarea>
+        <h2>Definition</h2>
+        <p>Here is the text for Inner-Outer Variables definition and usage.</p>
+        {codeBlock(`
+Function example 1 
+        `)}
+
+        <h2>Definition</h2>
+        <p>Here is the text for Var-Let-Const / Behaviors in Funcitons definition and usage.</p>
+        {codeBlock(`
+Function example 2
+        `)}
       </div>
     );
   };
 
   return (
-    <div>
-      <div className="thrd-btn">
-        <button
-          className="thrd-animated-btn"
-          onClick={() => handleButtonClick("function1")}
-        >
-          Returning a Value
-        </button>
+    <div className="body">
+      <div className="sidebar">
+        <div className="thrd-btn">
+          <button
+            className="thrd-animated-btn"
+            onClick={() => handleButtonClick("function1")}
+          >
+            Returning a Value
+          </button>
+        </div>
+        <div className="thrd-btn">
+          <button
+            className="thrd-animated-btn"
+            onClick={() => handleButtonClick("function2")}
+          >
+            Parameters
+          </button>
+        </div>
+        <div className="thrd-btn">
+          <button
+            className="thrd-animated-btn"
+            onClick={() => handleButtonClick("function3")}
+          >
+            Default Parameters
+          </button>
+        </div>
+        <div className="thrd-btn">
+          <button
+            className="thrd-animated-btn"
+            onClick={() => handleButtonClick("function4")}
+          >
+            Inner-Outer Variables
+          </button>
+        </div>
+        <div className="thrd-btn">
+          <button
+            className="thrd-animated-btn"
+            onClick={() => handleButtonClick("function5")}
+          >
+            Var-Let-Const / Behaviors in Funcitons
+          </button>
+        </div>
+      </div>
+      <div>
         <div>{selectedButton === "function1" && functionTypes1()}</div>
-      </div>
-      <div className="thrd-btn">
-        <button
-          className="thrd-animated-btn"
-          onClick={() => handleButtonClick("function2")}
-        >
-          Parameters
-        </button>
         <div>{selectedButton === "function2" && functionTypes2()}</div>
-      </div>
-      <div className="thrd-btn">
-        <button
-          className="thrd-animated-btn"
-          onClick={() => handleButtonClick("function3")}
-        >
-          Default Parameters
-        </button>
         <div>{selectedButton === "function3" && functionTypes3()}</div>
-      </div>
-      <div className="thrd-btn">
-        <button
-          className="thrd-animated-btn"
-          onClick={() => handleButtonClick("function4")}
-        >
-          Inner-Outer Variables
-        </button>
         <div>{selectedButton === "function4" && functionTypes4()}</div>
-      </div>
-      <div className="thrd-btn">
-        <button
-          className="thrd-animated-btn"
-          onClick={() => handleButtonClick("function5")}
-        >
-          Var-Let-Const / Behaviors in Funcitons
-        </button>
         <div>{selectedButton === "function5" && functionTypes5()}</div>
       </div>
     </div>

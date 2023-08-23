@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function DataTypesArray() {
+function FunctionTypesInOutVariables() {
   const [activeButton, setActiveButton] = useState(null);
 
   const codeBlock = (content) => {
@@ -20,8 +20,6 @@ function DataTypesArray() {
       setActiveButton(buttonNumber);
     }
   };
-
-
 
   return (
     <div className="main-content">
@@ -56,51 +54,6 @@ test2
 test3
 test3
 
-
-
-test3
-
-
-
-
-
-
-test3
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-test3
-
-test3
-
-
-
-
-
-
-
-
-
-
-
-
-test3
-
           `)}
           </>
         )}
@@ -109,4 +62,4 @@ test3
   );
 }
 
-export default DataTypesArray;
+export default FunctionTypesInOutVariables;

@@ -3,6 +3,7 @@ import DataTypesArray from "./DataTypesArray";
 import DataTypesObject from "./DataTypesObject";
 import DataTypesString from "./DataTypesString";
 import DataTypesNumber from "./DataTypesNumber";
+
 function DataTypes() {
   const [selectedButton, setSelectedButton] = useState(null);
   const handleButtonClick = (buttonKey) => {

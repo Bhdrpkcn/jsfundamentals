@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
-import This from "./components/This";
-import PromiseComponent from "./components/Promise";
-import LogicalOperators from "./components/LogicalOperators";
-import Functions from "./components/Functions";
-import DataTypes from "./components/DataTypes";
+import This from "./components/This/This";
+import PromiseComponent from "./components/Promise/Promise";
+import LogicalOperators from "./components/LogicalOp/LogicalOperators";
+import Functions from "./components/Functions/Functions";
+import DataTypes from "./components/DataTypes/DataTypes"
 
 function App() {
   const [selectedButton, setSelectedButton] = useState(null);

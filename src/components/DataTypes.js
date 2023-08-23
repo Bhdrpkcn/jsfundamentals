@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import DataTypesArray from "./DataTypesArray";
+import DataTypesObject from "./DataTypesObject";
+import DataTypesString from "./DataTypesString";
+import DataTypesNumber from "./DataTypesNumber";
 function DataTypes() {
   const [selectedButton, setSelectedButton] = useState(null);
   const handleButtonClick = (buttonKey) => {
@@ -20,7 +23,7 @@ function DataTypes() {
         <div className="thrd-btn">
           <button
             className="thrd-animated-btn"
-            onClick={() => handleButtonClick("dataTypes2")}
+            onClick={() => handleButtonClick("dataTypesObject")}
           >
             Object Methods
           </button>
@@ -28,7 +31,7 @@ function DataTypes() {
         <div className="thrd-btn">
           <button
             className="thrd-animated-btn"
-            onClick={() => handleButtonClick("dataTypes3")}
+            onClick={() => handleButtonClick("dataTypesString")}
           >
             String
           </button>
@@ -36,13 +39,16 @@ function DataTypes() {
         <div className="thrd-btn">
           <button
             className="thrd-animated-btn"
-            onClick={() => handleButtonClick("dataTypes4")}
+            onClick={() => handleButtonClick("dataTypesNumber")}
           >
             Number
           </button>
         </div>
       </div>
       {selectedButton === "dataTypesArray" && <DataTypesArray />}
+      {selectedButton === "dataTypesObject" && <DataTypesObject />}
+      {selectedButton === "dataTypesString" && <DataTypesString />}
+      {selectedButton === "dataTypesNumber" && <DataTypesNumber />}
     </div>
   );
 }

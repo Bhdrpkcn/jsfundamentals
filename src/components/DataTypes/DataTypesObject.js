@@ -24,7 +24,9 @@ function DataTypesObject() {
   return (
     <div className="main-content">
       <div>
-        <button onClick={() => toggleContent(1)}>1</button>
+        <button className="fourth-btn" onClick={() => toggleContent(1)}>
+          Object.values
+        </button>
         {activeButton === 1 && (
           <>
             <p>metin 1</p>
@@ -35,7 +37,9 @@ function DataTypesObject() {
         )}
       </div>
       <div>
-        <button onClick={() => toggleContent(2)}>2</button>
+        <button className="fourth-btn" onClick={() => toggleContent(2)}>
+          Object.entries
+        </button>
         {activeButton === 2 && (
           <>
             <p>metin 2</p>
@@ -46,8 +50,55 @@ function DataTypesObject() {
         )}
       </div>
       <div>
-        <button onClick={() => toggleContent(3)}>3</button>
+        <button className="fourth-btn" onClick={() => toggleContent(3)}>
+          Object.keys
+        </button>
         {activeButton === 3 && (
+          <>
+            <p>metin 3</p>
+            {codeBlock(`
+    test3
+    test3
+
+              `)}
+          </>
+        )}
+      </div>
+      <div>
+        <button className="fourth-btn" onClick={() => toggleContent(4)}>
+          ...(Destructuring Assigment)
+        </button>
+        {activeButton === 4 && (
+          <>
+            <p>metin 3</p>
+            {codeBlock(`
+    test3
+    test3
+
+              `)}
+          </>
+        )}
+      </div>
+      <div>
+        <button className="fourth-btn" onClick={() => toggleContent(5)}>
+          JSON.parse
+        </button>
+        {activeButton === 5 && (
+          <>
+            <p>metin 3</p>
+            {codeBlock(`
+    test3
+    test3
+
+              `)}
+          </>
+        )}
+      </div>
+      <div>
+        <button className="fourth-btn" onClick={() => toggleContent(6)}>
+          JSON.stringfy
+        </button>
+        {activeButton === 6 && (
           <>
             <p>metin 3</p>
             {codeBlock(`

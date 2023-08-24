@@ -24,7 +24,9 @@ function FunctionTypesInOutVariables() {
   return (
     <div className="main-content">
       <div>
-        <button onClick={() => toggleContent(1)}>1</button>
+        <button className="fourth-btn" onClick={() => toggleContent(1)}>
+          Inner Outer Variables
+        </button>
         {activeButton === 1 && (
           <>
             <p>metin 1</p>
@@ -34,30 +36,7 @@ test1
           </>
         )}
       </div>
-      <div>
-        <button onClick={() => toggleContent(2)}>2</button>
-        {activeButton === 2 && (
-          <>
-            <p>metin 2</p>
-            {codeBlock(`
-test2
-          `)}
-          </>
-        )}
-      </div>
-      <div>
-        <button onClick={() => toggleContent(3)}>3</button>
-        {activeButton === 3 && (
-          <>
-            <p>metin 3</p>
-            {codeBlock(`
-test3
-test3
-
-          `)}
-          </>
-        )}
-      </div>
+ 
     </div>
   );
 }

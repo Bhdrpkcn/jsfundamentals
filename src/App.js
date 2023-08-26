@@ -5,6 +5,7 @@ import PromiseComponent from "./components/Promise/Promise";
 import LogicalOperators from "./components/LogicalOp/LogicalOperators";
 import Functions from "./components/Functions/Functions";
 import DataTypes from "./components/DataTypes/DataTypes"
+import Background from "./Background";
 
 function App() {
   const [selectedButton, setSelectedButton] = useState(null);
@@ -55,6 +56,7 @@ function App() {
       {selectedButton === "logicalOperators" && <LogicalOperators />}
       {selectedButton === "functions" && <Functions />}
       {selectedButton === "dataTypes" && <DataTypes />}
+      <Background />
     </div>
   );
 }

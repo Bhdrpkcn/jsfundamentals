@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FunctionTypesDefVariables from "./FunctionTypesDefVariables";
+import FunctionTypesDefParameters from "./FunctionTypesDefParameters";
 import FunctionTypesInOutVariables from "./FunctionTypesInOutVariables";
 import FunctionTypesParameters from "./FunctionTypesParameters";
 import FunctionTypesValue from "./FunctionTypesValue";
@@ -58,7 +58,7 @@ function Functions() {
       {selectedButton === "functionValue" && <FunctionTypesValue />}
       {selectedButton === "functionParameters" && <FunctionTypesParameters />}
       {selectedButton === "functionDefParameters" && (
-        <FunctionTypesDefVariables />
+        <FunctionTypesDefParameters />
       )}
       {selectedButton === "functionInOutVariables" && (
         <FunctionTypesInOutVariables />

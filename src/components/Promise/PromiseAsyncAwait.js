@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 function PromiseAsyncAwait() {
-  const [activeButton, setActiveButton] = useState(null);
-
   const codeBlock = (content) => {
     return (
       <div>
@@ -13,30 +11,19 @@ function PromiseAsyncAwait() {
     );
   };
 
-  const toggleContent = (buttonNumber) => {
-    if (activeButton === buttonNumber) {
-      setActiveButton(null);
-    } else {
-      setActiveButton(buttonNumber);
-    }
-  };
-
   return (
     <div className="main-content">
       <div>
-        <button className="fourth-btn" onClick={() => toggleContent(1)}>
-          async/await syntax
-        </button>
-        {activeButton === 1 && (
-          <>
-            <p>
-              Promise, JavaScript'te asenkron işlemleri yönetmek için kullanılan
-              bir yapıdır. Bir işlem tamamlandığında (veya hata oluştuğunda)
-              sonucu veya hatayı temsil eden bir nesne döndürür. Üç durumu
-              vardır: "pending" (beklemede), "resolved" (çözülmüş) ve "rejected"
-              (reddedilmiş).
-            </p>
-            {codeBlock(`
+        <button className="fourth-btn">async/await syntax</button>
+        <>
+          <p>
+            Promise, JavaScript'te asenkron işlemleri yönetmek için kullanılan
+            bir yapıdır. Bir işlem tamamlandığında (veya hata oluştuğunda)
+            sonucu veya hatayı temsil eden bir nesne döndürür. Üç durumu vardır:
+            "pending" (beklemede), "resolved" (çözülmüş) ve "rejected"
+            (reddedilmiş).
+          </p>
+          {codeBlock(`
 const fetchData = new Promise((resolve, reject) => {
   setTimeout(() => {
     const data = "Veri alındı";
@@ -49,14 +36,14 @@ fetchData.then(result => {
 });
 
           `)}
-            <h4>Async/Await</h4>
-            <p>
-              Async/await, asenkron işlemleri daha okunabilir bir şekilde
-              yönetmek için kullanılan modern bir JavaScript sözdizimidir. async
-              anahtar kelimesi bir fonksiyonun asenkron bir fonksiyon olduğunu
-              belirtirken, await ifadesi bir promise'nin tamamlanmasını bekler.
-            </p>
-            {codeBlock(`
+          <h4>Async/Await</h4>
+          <p>
+            Async/await, asenkron işlemleri daha okunabilir bir şekilde yönetmek
+            için kullanılan modern bir JavaScript sözdizimidir. async anahtar
+            kelimesi bir fonksiyonun asenkron bir fonksiyon olduğunu
+            belirtirken, await ifadesi bir promise'nin tamamlanmasını bekler.
+          </p>
+          {codeBlock(`
 function fetchData() {
   return new Promise(resolve => {
     setTimeout(() => {
@@ -74,15 +61,15 @@ async function fetchDataAsync() {
 fetchDataAsync();
 
           `)}
-            <p>
-              Bu örnek, asenkron olarak veri almayı simüle eden bir işlemi
-              işler. fetchData fonksiyonu bir Promise döndürür.
-              fetchAndProcessData fonksiyonu ise await kullanarak fetchData
-              fonksiyonunun sonucunu bekler ve işlemin tamamlandığını veya bir
-              hatayla sonuçlandığını bildirir. Bu, asenkron işlemleri daha
-              lineer ve okunabilir bir şekilde yönetmenin bir örneğidir.
-            </p>
-            {codeBlock(`
+          <p>
+            Bu örnek, asenkron olarak veri almayı simüle eden bir işlemi işler.
+            fetchData fonksiyonu bir Promise döndürür. fetchAndProcessData
+            fonksiyonu ise await kullanarak fetchData fonksiyonunun sonucunu
+            bekler ve işlemin tamamlandığını veya bir hatayla sonuçlandığını
+            bildirir. Bu, asenkron işlemleri daha lineer ve okunabilir bir
+            şekilde yönetmenin bir örneğidir.
+          </p>
+          {codeBlock(`
 function fetchData() {
   return new Promise(resolve => {
     setTimeout(() => {
@@ -104,8 +91,7 @@ async function fetchAndProcessData() {
 fetchAndProcessData();
 
           `)}
-          </>
-        )}
+        </>
       </div>
     </div>
   );

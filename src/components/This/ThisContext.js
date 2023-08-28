@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 function ThisContext() {
-  const [activeButton, setActiveButton] = useState(null);
-
   const codeBlock = (content) => {
     return (
       <div>
@@ -13,30 +11,18 @@ function ThisContext() {
     );
   };
 
-  const toggleContent = (buttonNumber) => {
-    if (activeButton === buttonNumber) {
-      setActiveButton(null);
-    } else {
-      setActiveButton(buttonNumber);
-    }
-  };
-
   return (
     <div className="main-content">
       <div>
-        <button className="fourth-btn" onClick={() => toggleContent(1)}>
-          {"{ }"} and context in JS
-        </button>
-        {activeButton === 1 && (
-          <>
-            <h4>Object Method Call (Nesne Metodu Çağrısı)</h4>
-            <p>
-              Bu örnekte person adında bir nesne tanımlanmıştır. greet
-              fonksiyonu, person nesnesinin bir metodu olarak tanımlanmıştır. Bu
-              fonksiyon içinde this.name ifadesi, person nesnesinin name
-              özelliğine erişir.
-            </p>
-            {codeBlock(`
+        <button className="fourth-btn">{"{ }"} and context in JS</button>
+        <>
+          <h4>Object Method Call (Nesne Metodu Çağrısı)</h4>
+          <p>
+            Bu örnekte person adında bir nesne tanımlanmıştır. greet fonksiyonu,
+            person nesnesinin bir metodu olarak tanımlanmıştır. Bu fonksiyon
+            içinde this.name ifadesi, person nesnesinin name özelliğine erişir.
+          </p>
+          {codeBlock(`
 const person = {
   name: "John",
   age: 30,
@@ -48,13 +34,13 @@ const person = {
 person.greet(); // Merhaba, ben John
 
           `)}
-            <h4>Event Handler (Olay İşleyici) Çağrısı</h4>
-            <p>
-              Bu örnekte bir HTML düğmesine tıklanıldığında çağrılacak bir olay
-              işleyici (event handler) tanımlanmıştır. İçindeki this ifadesi,
-              olayın tetiklendiği HTML düğmesini temsil eder.
-            </p>
-            {codeBlock(`
+          <h4>Event Handler (Olay İşleyici) Çağrısı</h4>
+          <p>
+            Bu örnekte bir HTML düğmesine tıklanıldığında çağrılacak bir olay
+            işleyici (event handler) tanımlanmıştır. İçindeki this ifadesi,
+            olayın tetiklendiği HTML düğmesini temsil eder.
+          </p>
+          {codeBlock(`
 <button id="myButton">Tıkla</button>
 
 <script>
@@ -65,13 +51,13 @@ button.addEventListener("click", function() {
 </script>
 
           `)}
-            <h4>Arrow Fonksiyon ve this Kullanımı</h4>
-            <p>
-              Bu örnekte, person nesnesinin greet fonksiyonu içinde bir
-              setTimeout kullanılmıştır. İçerideki arrow fonksiyon, this
-              bağlamını değiştirmez ve hala person nesnesini temsil eder.
-            </p>
-            {codeBlock(`
+          <h4>Arrow Fonksiyon ve this Kullanımı</h4>
+          <p>
+            Bu örnekte, person nesnesinin greet fonksiyonu içinde bir setTimeout
+            kullanılmıştır. İçerideki arrow fonksiyon, this bağlamını
+            değiştirmez ve hala person nesnesini temsil eder.
+          </p>
+          {codeBlock(`
 const person = {
   name: "John",
   greet: function() {
@@ -84,13 +70,13 @@ const person = {
 person.greet(); // Merhaba, ben John (1 saniye sonra)
 
           `)}
-            <h4>Fonksiyon Çağrısı Kullanımı</h4>
-            <p>
-              Bu örnekte globalFunction fonksiyonu bağımsız olarak
-              çağrıldığında, this tarayıcıda window nesnesini temsil eder. Bu,
-              normal bir fonksiyonun global bağlamda nasıl çalıştığını gösterir.
-            </p>
-            {codeBlock(`
+          <h4>Fonksiyon Çağrısı Kullanımı</h4>
+          <p>
+            Bu örnekte globalFunction fonksiyonu bağımsız olarak çağrıldığında,
+            this tarayıcıda window nesnesini temsil eder. Bu, normal bir
+            fonksiyonun global bağlamda nasıl çalıştığını gösterir.
+          </p>
+          {codeBlock(`
 function globalFunction() {
   console.log("Global Context:", this === window);
 }
@@ -98,13 +84,12 @@ function globalFunction() {
 globalFunction(); // Global Context: true (Tarayıcıda)
 
           `)}
-            <p>
-              Bu örneklerde this kullanımı ve {} ifadeleri, fonksiyonların
-              çağrıldığı bağlama bağlı olarak nasıl değiştiğini ve hangi nesneyi
-              temsil ettiklerini göstermektedir.
-            </p>
-          </>
-        )}
+          <p>
+            Bu örneklerde this kullanımı ve {} ifadeleri, fonksiyonların
+            çağrıldığı bağlama bağlı olarak nasıl değiştiğini ve hangi nesneyi
+            temsil ettiklerini göstermektedir.
+          </p>
+        </>
       </div>
     </div>
   );
